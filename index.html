@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link rel="stylesheet" href="resources/css/reset.css">
+    <link rel="stylesheet" href="resources/css/style.css">
+    <link rel="icon" href="resources/images/ic-logo.ico"/>
+    <title>Colmar Academy</title>
+  </head>
+
+<!-- QUESTION: i tried to use as many semantic html tags as possible. please give some feedback if i did this right. thanx! -->
+<!-- as listed here: https://developer.mozilla.org/en-US/docs/Web/HTML/Element -->
+<!-- i probably should use more... how often is <main> allowed? or <header>? just once or could i have used it several times for this project? -->
+
+<!-- QUESTION: i checked the sizes of the images, but in my opinion none should be resized (to a smaller size) as the desktop version
+should contain large images, and not only ~300px images, the images are large! is this correct? -->
+
+<!-- QUESTION: i added some roles. should i really ad a role for EVERY div? or is it sufficient how i did it here? did i use some wrong roles? -->
+
+  <body>
+
+<!--- HEADER  -->
+    <header role="heading">
+      <div class="container_logo" id="hidden_mobile">
+        <img src="resources/images/ic-logo.svg" alt="logo">
+          <p>colmar</p>
+          <p>academy</p>
+      </div>
+
+      <nav role="navigation">
+        <!-- DESKTOP VERSION -->
+        <a id="hidden_mobile" href="#">On Campus</a>
+        <a id="hidden_mobile" href="#">Online</a>
+        <a id="hidden_mobile" href="#">For Companies</a>
+        <a id="hidden_mobile" href="#">Sign In</a>
+        <!-- MOBILE VERSION -->
+        <a id="hidden_desktop" href="#"><img src="resources/images/ic-logo.svg" alt="logo"></a>
+        <a id="hidden_desktop" href="#"><img src="resources/images/ic-on-campus.svg" alt="on-campus"></a>
+        <a id="hidden_desktop" href="#"><img src="resources/images/ic-online.svg" alt="online"></a>
+        <a id="hidden_desktop" href="#"><img src="resources/images/ic-login.svg" alt="login"></a>
+      </nav>
+    </header>
+
+<!-- MAIN -->
+    <main class="main_content" role="main">
+
+<!-- BANNER -->
+      <section class="container_banner" role="banner">
+        <div class="container_main_60">
+          <div class="container_media_padding">
+            <img src="resources/images/banner.jpg" alt="students learning">
+          </div>
+        </div>
+
+        <div class="container_side_40">
+          <h1> Learn something <br> new everyday</h1>
+          <h5> Lorem ipsum dlolor sit amet, <br> consectetur adipiscing elit.</h5>
+          <a href="#container_learning" role="button"> Start here</a>
+        </div>
+      </section>
+
+  <!-- INFO -->
+      <section class="container_info">
+
+        <div class="container_main_60" id="hidden_mobile">
+          <!-- QUESTION: would it make sense to use figure and figure caption here? also at the other places of this document where there is an image and text below -->
+          <div class="container_media_padding" role="img">
+            <img src="resources/images/information-main.jpg" alt="student reading">
+          </div>
+          <div class="container_text_info" role="contentinfo">
+            <h1>
+              It doesn't hurt to keep practicing
+            </h1>
+            <p>
+              "Curabitur vitae libero in ipsum porttitor consequat.
+              Aliquam et commodo lectus,nec consequat neque.
+              Sed non accumsan urna. Phasellus sed consequat ex.
+              Curabitur vitae libero in ipsum porttitor consequat.
+              Aliquam et commodo lectus,nec consequat neque.
+              Curabitur vitae libero in ipsum porttitor consequat"
+            </p>
+            <p class="quote">
+              Emanuel, Sr Strategist at Hiring.com
+            </p>
+          </div>
+        </div>
+
+        <div class="container_side_40">
+          <a href="" class="container_info_box">
+            <div class="container_media_35" role="img">
+              <!-- QUESTION: the lesson said if the image is decorative, use an empty alt, but don't ommit the alt,
+                            this image is decorative, right? and what is the purpose of an empty alt? why can't i ommit it?it gives no info?!  -->
+              <img id="hidden_mobile" src="resources/images/information-orientation.jpg" alt="">
+              <img id="hidden_desktop" src="resources/images/information-orientation-mobile.jpg" alt="">
+            </div>
+            <div class="container_side_65" role="contentinfo">
+              <h2> Orientation date</h2>
+              <p> Tue 10/11 /& Wed 10/12:8am-3pm</p>
+              <p class="bold"> Read more</p>
+            </div>
+          </a>
+
+          <a href=""  class="container_info_box">
+            <div class="container_media_35" role="img">
+              <img id="hidden_mobile" src="resources/images/information-campus.jpg" alt="">
+              <img id="hidden_desktop" src="resources/images/information-campus-mobile.jpg" alt="">
+            </div>
+            <div class="container_side_65" role="contentinfo">
+              <h2> Our campus </h2>
+              <p> Find which campus is close by you </p>
+              <p class="bold"> Read more</p>
+            </div>
+          </a>
+
+          <a href=""  class="container_info_box">
+            <div class="container_media_35" role="img">
+              <img id="hidden_mobile" src="resources/images/information-guest-lecture.jpg" alt="">
+              <img id="hidden_desktop" src="resources/images/information-guest-lecture-mobile.jpg" alt="">
+            </div>
+            <div class="container_side_65" role="contentinfo">
+              <h2> Our guest lecture</h2>
+              <p> Join a keynote with Oliver Sack about music in medical treatment</p>
+              <p class="bold"> Read more</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+  <!-- LEARNING -->
+      <section id="container_learning">
+        <h1 class="title" role="heading"> Start learning </h1>
+
+          <div class="subcontainer_learning">
+            <a class="container_learning_box">
+              <div class="container_media_100"  id="hidden_mobile" role="presentation">
+                <img src="resources/images/course-software.jpg" alt="" role="img">
+              </div>
+              <h2> Software engineering</h2>
+              <div class="learning_info">
+                <p> COURSES </p>
+                <p> Web Development, Mobile Development, iOT, APIs</p>
+              </div>
+            </a>
+
+            <a class="container_learning_box">
+              <div class="container_media_100"  id="hidden_mobile" role="presentation">
+                <img src="resources/images/course-computer-art.jpg" alt="" role="img">
+              </div>
+              <h2> Computer art</h2>
+              <div class="learning_info">
+                <p> COURSES </p>
+                <p> Imaging & Design, Web Design, Motion Graphics & Visual Effects, Computer Animation</p>
+              </div>
+            </a>
+
+            <a class="container_learning_box">
+              <div class="container_media_100" id="hidden_mobile" role="presentation">
+                <img src="resources/images/course-design.jpg" alt="" role="img">
+              </div>
+              <h2> Design</h2>
+              <div class="learning_info">
+                <p> COURSES </p>
+                <p> User Experience Design, User Research, Visual Design</p>
+              </div>
+            </a>
+
+            <a class="container_learning_box">
+              <div class="container_media_100" id="hidden_mobile" role="presentation">
+                <img src="resources/images/course-data.jpg" alt="" role="img">
+              </div>
+                <h2> Data</h2>
+                <div class="learning_info">
+                  <p> COURSES </p>
+                  <p> Data Science, Big Data, SQL, Data Visualization</p>
+                </div>
+            </a>
+
+            <a class="container_learning_box">
+              <div class="container_media_100" id="hidden_mobile" role="presentation">
+                <img src="resources/images/course-business.jpg" alt="" role="img">
+              </div>
+              <h2> Business</h2>
+              <div class="learning_info">
+                <p> COURSES </p>
+                <p>Product Developement,  Developement, Startup</p>
+              </div>
+            </a>
+
+            <a class="container_learning_box">
+              <div class="container_media_100" id="hidden_mobile" role="presentation">
+                <img src="resources/images/course-marketing.jpg" alt="" role="img">
+              </div>
+              <h2> Marketing</h2>
+              <div class="learning_info">
+                <p> COURSES </p>
+                <p> Analystics, Content Marketing, Mobile Marketing</p>
+              </div>
+            </a>
+          </div>
+      </section>
+
+  <!-- THESIS -->
+      <section class="container_thesis">
+        <h1 class="title"> Thesis exhibit </h1>
+        <div class="subcontainer_thesis">
+
+          <div class="thesis_main">
+            <div class="container_media_padding" role="media">
+              <video controls poster="resources/videos/poster.png">
+                <source src="resources/videos/thesis.mp4" type="video/mp4" alt="skyscraper with fast moving clouds">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+
+            <div class="container_text_thesis" id="hidden_mobile" role="complementary">
+              <h1> Reimagine urban </h1>
+              <p>
+                "Curabitur vitae libero in ipsum porttitor consequat.
+                Aliquam et commodo lectus,nec consequat neque.
+                Sed non accumsan urna. Phasellus sed consequat ex.
+                Curabitur vitae libero in ipsum porttitor consequat.
+                Aliquam et commodo lectus,nec consequat neque.
+                Curabitur vitae libero in ipsum porttitor consequat"
+              </p>
+            </div>
+          </div>
+
+          <div class="container_side_40" id="hidden_mobile">
+            <a href="" class="container_thesis_box">
+              <div class="container_media_35">
+                <img src="resources/images/thesis-fisma.jpg" alt="">
+              </div>
+              <div class="container_side_65">
+                <h2> Fisma: Design and Prototype </h2>
+                <p> Designer showcase of new prototype product</p>
+              </div>
+            </a>
+
+            <a href="" class="container_thesis_box">
+              <div class="container_media_35">
+                <img src="resources/images/thesis-now-and-then.jpg" alt="">
+              </div>
+              <div class="container_side_65">
+                <h2>Now and then</h2>
+                <p> Research study about New York </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+  <!-- FOOTER -->
+      <footer>
+        <p>&copy 2016 Colmar Academy. All rights reserved</p>
+        <nav id="hidden_mobile">
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+        </nav>
+      </footer>
+    </main>
+  </body>
+</html>

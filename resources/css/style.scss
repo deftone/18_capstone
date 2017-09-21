@@ -1,0 +1,598 @@
+// NOTE: the spec is not consitent at all! there are several paddings/margins saying "32px" but some are big, some small...
+
+// GENERAL: VARIABLES
+$orange-light: hsl(30, 100%, 70%);
+$orange-medium: hsl(30, 100%, 50%);
+$orange-dark: hsl(30, 100%, 35%);
+$blue-white: hsl(210,100%, 90%);
+$blue-light: hsl(210,100%, 70%);
+$blue-medium: hsl(210, 100%, 50%);
+$blue-dark: hsl(210, 100%, 35%);
+$max-width: 700px;
+$shadow_small: 2px;
+$shadow_medium: 3px;
+$shadow_large: 5px;
+$shadow_huge: 10px;
+$duration_short: .5s;
+$duration_medium: 1s;
+$duration_long: 2s;
+
+/***GENERAL: COLORS & FONTS***/
+
+html{
+  font-size: 10px; /*easy to calculate: 1rem=10px*/
+}
+
+body{
+  font-size: 1.6rem;
+  font-family: 'Muli', sans-serif;
+  color: $blue-dark;
+}
+
+a{
+  text-decoration: none;
+}
+
+p{
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+}
+
+h1, h2, h3{
+  font-weight: bold;
+}
+
+h4, h5, h6{
+  font-weight: normal;
+}
+
+h1, h4{
+  font-size: 5rem;
+  line-height: 5.5rem;
+}
+
+h2, h5{
+  font-size: 3rem;
+  line-height: 3.5rem;
+}
+
+h3, h6{
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+
+/*** GENERAL: NAVIGATION ***/
+nav a{
+  color: $blue-medium;
+  padding: .8rem;
+  background-color: $blue-medium;
+  color: white;
+  border-radius: 1rem;
+  font-weight: bold;
+  &:last-child{
+    margin-right: 1.6rem;
+  }
+  &:hover{
+    color: $blue-medium;
+    background-color: white;
+  }
+  &:active{
+    color: white;
+    background-color: $orange-dark;
+  }
+}
+
+/*** GENERAL: CONTAINER MEDIA ***/
+.container_media{
+  img,
+  video{
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 1rem;
+  }
+}
+
+.container_media_padding{
+  @extend .container_media;
+  padding: 3.2rem 2.4rem;
+}
+
+.container_media_100{
+  @extend .container_media;
+  width: 100%;
+}
+
+.container_media_60{
+  @extend .container_media;
+  width: 60%;
+}
+
+.container_media_35{
+  @extend .container_media;
+  padding: 1.6rem;
+  width: 35%;
+}
+
+/*** GENERAL: CONTAINER WITH TEXT ***/
+.container_img_text_below{
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-radius: 1rem;
+}
+
+.container_main_60{
+  @extend .container_img_text_below;
+  width: 60%;
+}
+
+.container_text{
+  display: block;
+  padding: 0 2.4rem 3.2rem 2.4rem;
+}
+
+/*** GENERAL: CONTAINER BOX ***/
+.container_box{
+  display: flex;
+  width: 99%;
+  border-radius: 1rem;
+  background-color: $blue-light;
+  border: 1px solid $blue-dark;
+  margin-bottom: 1rem;
+  margin-right: 1%;
+  transition-duration: $duration_short;
+   h2,
+   p{
+    display: inline-flex;
+    margin: .8rem 0;
+    color: white;
+    transition-duration: $duration_short;
+  }
+  h2{
+    text-shadow: $shadow_medium $shadow_medium $blue-dark;
+    transition-duration: $duration_short;
+  }
+  p{
+    color: $blue-dark;
+  }
+  &:hover{
+    background-color: $orange-light;
+    border: 1px solid $orange-dark;
+    h2{
+      color: white;
+      text-shadow: $shadow_medium $shadow_medium $orange-dark;
+    }
+    p{
+      color: $orange-dark;
+    }
+  }
+}
+
+/*** GENERAL: CONTAINER ASIDE ***/
+.container_side{
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 1rem;
+}
+
+.container_side_40{
+  @extend .container_side;
+  width: 40%;
+}
+
+.container_side_65{
+  @extend .container_side;
+  width: 65%;
+}
+
+/*** GENERAL: OTHER ***/
+.title{
+  text-align: center;
+  text-shadow: $shadow_large $shadow_large $blue-dark;
+  padding: 3.2rem 0;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.background_grey_white{
+  background-color: $orange-medium;
+}
+
+/*** GENERAL: MOBILE & DESKTOP SCREEN ***/
+@media only screen and (max-width: $max-width){
+  #hidden_mobile{
+    display: none;
+  }
+}
+
+@media only screen and (min-width: $max-width) {
+  #hidden_desktop{
+    display: none ;
+  }
+}
+
+/*** HEADER ***/
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $orange-light;
+  height: 6.4rem;
+  position: fixed;
+  width: 100%;
+  z-index: 20;
+  border: 1px solid $orange-dark;
+
+  .container_logo{
+    display: flex;
+    align-items: center;
+    color: $orange-dark;
+    text-shadow: $shadow_small 1px white;
+  }
+
+  .container_logo  p:last-child{
+    font-weight: normal;
+    color: $blue-dark;
+  }
+
+  img{
+    padding-left: 2.4rem;
+    height: 6.4rem;
+  }
+
+  p{
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2rem;
+    height: 2rem; /*total height: 3.2rem*/
+    padding: 1.2rem 0;
+  }
+
+  nav {
+    a{
+      margin-right: .4rem;
+    }
+    &:last-child{
+      margin-right: .5rem;
+    }
+  }
+}
+
+@media only screen and (max-width: $max-width){
+  header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    a{
+      background-color: $orange-light;
+      padding: 0;
+      &:hover{
+        background-color: $orange-light;
+      }
+      &:active{
+        background-color: $orange-medium;
+      }
+    }
+    img{
+      height: 4rem;
+      padding: 0;
+      &:hover{
+        height: 6rem;
+      }
+    }
+  }
+}
+
+/*** MAIN ***/
+main.main_content{
+  top: 6.4rem;
+  position: relative;
+}
+
+/*** BANNER ***/
+.container_banner{
+  display: flex;
+  background-color: $orange-medium;
+
+  h1,
+  h5{
+    display: inline-flex;
+    margin: 2rem 1.6rem;
+    color: white;
+  }
+
+  h1{
+      text-shadow: $shadow_large $shadow_large $orange-dark;
+  }
+
+  a{
+    background-color: $blue-medium;
+    color: white;
+    font-size: 2rem;
+    padding: 0.8rem 10rem;
+    margin: 2rem 1.6rem;
+    text-align: center;
+    border-radius: 1rem;
+    &:hover{
+      background-color: white;
+      color: $blue-medium;
+    }
+    &:active{
+        color: white;
+        background-color: $orange-dark;
+    }
+    &{
+      transition:{
+        property: background-color;
+        duration: $duration_short;
+        delay: 0ms;
+        timing-function: ease-in;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:$max-width) {
+  .container_banner{
+    flex-direction: column;
+    a{
+      width: 94%;
+      margin: 2.4rem 1.6rem 3.2rem 1.6rem;
+      padding: 1.6rem 0;
+      &:active{
+        margin: auto;
+        margin: 2.4rem 1.6rem 3.2rem 1.6rem;
+        padding: 1.6rem 0;
+      }
+    }
+  }
+
+  .container_main_60{
+    width: 100%;
+    .container_media_padding{
+      padding: 0;
+    }
+  }
+
+  .container_side_40{
+    width: 100%;
+  }
+}
+
+/*** INFO ***/
+.container_info{
+  display: flex;
+  align-items: flex-start;
+
+  .container_text_info{
+    @extend .container_text;
+    h1{
+      padding-bottom: 2.4rem;
+
+      text-shadow: $shadow_medium $shadow_medium $blue-light;
+    }
+    .quote{
+        color: $blue-dark;
+        font-size: 1.6rem;
+        font-weight: bold;
+        padding: 3.2rem 0;
+    }
+  }
+
+  .container_info_box{
+    @extend .container_box;
+    &:first-child{
+      margin-top: 3.2rem;
+    }
+  }
+}
+
+@media only screen and (max-width: $max-width) {
+  .container_info_box{
+    flex-direction: column;
+  }
+
+  .container_media_35{
+    width: auto;
+    margin: auto;
+  }
+
+  .container_side_65{
+    p,h2{
+      padding-left: 1.6rem;
+    }
+
+    p:last-child{
+      padding-bottom: 3.2rem;
+    }
+  }
+}
+
+/*** LEARNING ***/
+#container_learning{
+  //hack to make the "start learning" button jump to the correct position
+  position: relative;
+  margin-top:-64px;
+  padding-top:64px;
+  // z-index:-1; <- that makes the hover disabled, better: transparent background
+  background-color: transparent;
+  color: white;
+
+  .title{
+    background-color: $blue-light;
+  }
+
+  .subcontainer_learning{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0 5.6rem;
+      background-color: $blue-light;
+  }
+
+  .container_learning_box{
+    @extend .container_img_text_below;
+    width: 30%;
+    //margin outside the box
+    margin: 0 1.6rem 3.6rem 1.6rem;
+    background-color: white;
+    transition-duration: $duration_medium;
+    h2{
+      color: $blue-dark;
+      text-shadow: $shadow_small $shadow_small $blue-light;
+      margin: 1.6rem;
+      transition-duration: $duration_medium;
+    }
+    p{
+      margin: .8rem 1.6rem;
+      color: $blue-medium;
+      transition-duration: $duration_medium;
+    }
+    p:last-child{
+      margin-bottom: 2.4rem;
+    }
+    &:hover{
+      background-color: $orange-medium;
+      box-shadow: $shadow_huge $shadow_huge $shadow_large $blue-dark;
+      h2,p{
+        color: white;
+      }
+      h2{
+        text-shadow:  $shadow_medium $shadow_medium $orange-dark;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $max-width) {
+  #container_learning{
+    background-color: transparent;
+    color: $blue-dark;
+    .title{
+      color: white;
+      text-shadow: $shadow_large $shadow_large $blue-dark;
+    }
+
+    #container_learning #hidden_desktop{
+      padding-bottom: 3.2rem;
+    }
+
+    .subcontainer_learning{
+        padding: 0 0.2rem;
+    }
+
+    .container_learning_box{
+      width: 100%;
+      background-color: $orange-medium;
+      margin: 0.8rem;
+      transition-property: background-color;
+      transition-duration: $duration_long;
+      &:last-child{
+        margin-bottom: 3.2rem;
+      }
+      h2, p{
+        color: white;
+      }
+      h2{
+        text-shadow: $shadow_medium $shadow_medium $orange-dark;
+      }
+      &:hover,
+      &:active{
+        background-color: $blue-dark;
+        box-shadow: none;
+        h2{
+          text-shadow: none;
+        }
+      }
+      .learning_info{
+        overflow: hidden;
+        max-height: 0;
+        transition-property: max-height;
+        transition-duration: $duration_long;
+      }
+      //what a combination... this way it is possible to shift the div outside the h2
+      &:hover .learning_info ,
+      &:active .learning_info{
+        max-height:300px;
+      }
+    }
+  }
+}
+/*** THESIS ***/
+.container_thesis{
+  background-color: $blue-medium;
+  color: white;
+
+  .subcontainer_thesis{
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .thesis_main{
+    @extend .container_img_text_below;
+    width: 60%;
+  }
+
+  .container_text_thesis{
+    @extend .container_text;
+    h1{
+     padding-bottom: 0.8rem;
+     text-shadow: $shadow_large $shadow_large $blue-dark;
+    }
+  }
+
+  .container_thesis_box{
+    @extend .container_box;
+      &:first-child{
+      margin-top: 3.2rem;
+    }
+  }
+}
+
+@media only screen and (max-width:$max-width) {
+  .container_thesis{
+    .thesis_main{
+      width: 100%;
+    }
+    .container_media_padding{
+      padding: 0;
+    }
+  }
+}
+
+/*** FOOTER ***/
+footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  background-color: $blue-dark;
+  color: white;
+  p{
+    padding: 1.6rem 0 6.4rem 2.4rem;
+  }
+  nav{
+    display: inline-block;
+     a{
+       background-color: $blue-dark;
+       &:hover{
+         color: $blue-dark;
+         background-color: white;
+         border-radius: 1rem;
+       }
+       &:active{
+         background-color: white;
+         border-radius: 1rem;
+       }
+     }
+  }
+}
